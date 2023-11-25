@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class App {
-
+class students {
     public static void main(String[] args) throws Exception {
         int arrStudents1[] = new int[10];
         int arrStudents2[] = new int[10];
@@ -30,7 +29,7 @@ public class App {
 
     public static void userEnter(int[] array) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the ID:");
+        System.out.println("Enter the IDs:");
         for (int i = 0; i < array.length; i++) {
             array[i] = scanner.nextInt();
         }
@@ -42,4 +41,5 @@ public class App {
             System.out.println(value);
         System.err.println(""); // just to organize the Terminal.
     }
+
 }
