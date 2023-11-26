@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class calculation {
     public static void main(String[] args) {
@@ -6,18 +7,21 @@ public class calculation {
         Scanner firstNumber = new Scanner(System.in);
         Scanner secondNumber = new Scanner(System.in);
 
-        System.out.println("please enter the first number:");
         int firstN = 0;
-        try {
-            firstN = firstNumber.nextInt();
-        } catch (Exception e) {
-            System.out.println("\u000C");
-
-            System.out.println("you must enter a number:");
-            firstN = firstNumber.nextInt();
+        int secondN = 0;
+        boolean y = true;
+        while (y == false) {
+            try {
+                System.out.println("please enter the first number:");
+                firstN = firstNumber.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("you must enter a number:");
+                firstNumber.nextLine();
+                y = false;
+            }
         }
         System.out.println("please enter the secon number:");
-        int secondN = secondNumber.nextInt();
+        secondN = secondNumber.nextInt();
         firstNumber.close();
         secondNumber.close();
         int sum = firstN + secondN;
