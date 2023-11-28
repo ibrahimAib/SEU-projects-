@@ -1,0 +1,66 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class calculation {
+    public static void main(String[] args) {
+        Scanner firstNumber = new Scanner(System.in);
+        Scanner secondNumber = new Scanner(System.in);
+
+        int firstN = 0;
+        int secondN = 0;
+        boolean error = false;
+
+        // First input:
+        do {
+            try {
+                System.out.println("please enter the first number:");
+                firstN = firstNumber.nextInt();
+                error = false;
+            } catch (InputMismatchException e) {
+                System.out.println("you can't calculating letters.");
+                firstNumber.nextLine();
+                error = true;
+                for (int i = 0; i < 3; i++) {
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException exc) {
+                        Thread.currentThread().interrupt();
+                    }
+                    String[] x = { "***", "**", "*", "" };
+                    System.out.println(x[i]);
+                }
+            }
+        } while (error == true);
+
+        // Second input:
+        do {
+            try {
+                System.out.println("please enter the second number:");
+                secondN = secondNumber.nextInt();
+                error = false;
+            } catch (InputMismatchException e) {
+                System.out.println("you can't calculating letters.");
+                secondNumber.nextLine();
+                error = true;
+                for (int i = 0; i < 3; i++) {
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException exc) {
+                        Thread.currentThread().interrupt();
+                    }
+                    String[] x = { "***", "**", "*", "" };
+                    System.out.println(x[i]);
+                }
+            }
+        } while (error == true);
+        firstNumber.close();
+        secondNumber.close();
+        int sum = firstN + secondN;
+        System.out.println(sum);
+
+    }
+
+
+
+}
+

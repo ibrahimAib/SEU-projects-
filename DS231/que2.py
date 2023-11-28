@@ -1,10 +1,10 @@
-import random as ran # importing the module
+import random as ran # importing the module.
 characters = list('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnoPqrstuvwxyz123456789!@#$%^&*') # list of characters to choose from.
-password = '' # variable to save the password
-for i in range(18): # for loop to loop 18 times to choose 18 character
-    password += ran.choice(characters) # choose a random character from our list "characters" and add it to "password" variable.
+password = '' # variable to save the password in.
+for i in range(18):
+    password += ran.choice(characters) # it chooses a random character from our list "characters" and adds it to the "password" variable.
 
-print(password) # print the generated password
+print(f"the generated password: {password}") # print the generated password
 
 
 

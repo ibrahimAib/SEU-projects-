@@ -1,8 +1,8 @@
-numbers =[int(input("1:")), 
-          int(input("2:")),
-          int(input("3:")),
-          int(input("4:")),
-          int(input("5:"))] # get the numbers from user.
+numbers =[int(input("1:> ")), 
+          int(input("2:> ")),
+          int(input("3:> ")),
+          int(input("4:> ")),
+          int(input("5:> "))] # get the numbers from user.
 print("_____________________")
 Sum = sum(numbers,0) #sum the numbers
 average = sum(numbers)/len(numbers) # get the average by dividing the sum of the numbers by their number.

@@ -1,31 +1,63 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class calculation {
+class Calculator {
     public static void main(String[] args) {
+        int fNumber = userInput("enter the first number plece:");
+        int sNumber = userInput("enter the second number plece:");
+        userOptions(fNumber, sNumber);
+    }
 
-        Scanner firstNumber = new Scanner(System.in);
-        Scanner secondNumber = new Scanner(System.in);
+    static int userInput(String text) {
+        Scanner scan = new Scanner(System.in);
+        int num = 0;
+        boolean error = false;
 
-        int firstN = 0;
-        int secondN = 0;
-        boolean y = true;
-        while (y == false) {
+        do {
             try {
-                System.out.println("please enter the first number:");
-                firstN = firstNumber.nextInt();
+                System.out.println(text);
+                num = scan.nextInt();
+                error = false;
             } catch (InputMismatchException e) {
-                System.out.println("you must enter a number:");
-                firstNumber.nextLine();
-                y = false;
+                System.out.println("you can't calculating letters.");
+                scan.nextLine();
+                error = true;
+                System.out.println("-----------------------------------------------------------------\n");
             }
-        }
-        System.out.println("please enter the secon number:");
-        secondN = secondNumber.nextInt();
-        firstNumber.close();
-        secondNumber.close();
-        int sum = firstN + secondN;
-        System.out.println(sum);
+        } while (error == true);
+        return num;
+    }
+
+    static void userOptions(int first, int second) {
+        Scanner scan = new Scanner(System.in);
+        boolean error = false;
+        do {
+            System.out.println("Please select one of the following operations by typin a, b, or c");
+            System.out.println("-----------------------------------------------------------------");
+            System.out.println("a- Add the tow number");
+            System.out.println("b- Multiply the tow numbers");
+            System.out.println("c- Find the average of the tow numbers");
+            System.out.println("-----------------------------------------------------------------");
+            String userOption = scan.nextLine();
+            if (userOption.equals("a")) {
+                int sum = first + second;
+                System.out.println(first + "+" + second + "=" + sum);
+                error = false;
+            } else if (userOption.equals("b")) {
+                int multiplication = first + second;
+                System.out.println(first + "*" + second + "=" + multiplication);
+                error = false;
+            } else if (userOption.equals("c")) {
+                int average = first + second;
+                System.out.println(first + "+" + second + "=" + average);
+                error = false;
+            } else {
+                System.out.println("\n  ------------");
+                System.out.println("| Wrong choice |");
+                System.out.println("  ------------\n");
+                error = true;
+            }
+        } while (error);
     }
 
 }
